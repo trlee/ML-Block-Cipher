@@ -30,164 +30,165 @@ void roundProcess(const int n, const int nrounds, int as, int B[], int* Bn,
 	//new_diff = new_diff | ((((ori&0x8)>>1) ^ (ori&0x4))<<1);
 
 	//new_diff = new_diff | ((ori&0x2)<<1);
-	//new_diff = new_diff | ((((ori&0x2)>>1) ^ (ori&0x1))<<1);
+	//new_diff = new_diff | ((((ori&0x2)>>1) ^ (ori&0x1)) <<1);
 
 	//S-Box and Permutation (2301 - Shuffle)
 	//new_diff = new_diff | ((ori & 0x8) >> 2);
-	//new_diff = new_diff | ((ori & 0x4) >> 2);
+	//new_diff = new_diff | ((((ori&0x8)>>1) ^ (ori&0x4)) >> 2);
 
 	//new_diff = new_diff | ((ori & 0x2) << 2);
-	//new_diff = new_diff | ((ori & 0x1) << 2);
+	//new_diff = new_diff | ((((ori&0x2)>>1) ^ (ori&0x1)) << 2);
 
 	//S-Box and Permutation (0123 - None)
-	//new_diff = ori;
+	//new_diff = new_diff | (((ori&0x8)>>1) ^ (ori&0x4));
+	//new_diff = new_diff | (((ori&0x2)>>1) ^ (ori&0x1))
 
 	//S-Box and Permutation (3120 - Half Shuffle)
 	//new_diff = new_diff | ((ori & 0x8) >> 3);
-	//new_diff = new_diff | ((ori & 0x4));
+	//new_diff = new_diff | (((ori&0x8)>>1) ^ (ori&0x4));
 
-	//new_diff = new_diff | ((ori & 0x2));
-	//new_diff = new_diff | ((ori & 0x1) << 3);
+	//new_diff = new_diff | (ori & 0x2);
+	//new_diff = new_diff | ((((ori&0x2)>>1) ^ (ori&0x1)) << 3);
 
 	//S-Box and Permutation (1023)
 	//new_diff = new_diff | ((ori & 0x8) >> 1);
-	//new_diff = new_diff | ((ori & 0x4) << 1);
+	//new_diff = new_diff | ((((ori&0x8)>>1) ^ (ori&0x4)) << 1);
 
-	//new_diff = new_diff | ((ori & 0x2));
-	//new_diff = new_diff | ((ori & 0x1));
+	//new_diff = new_diff | (ori & 0x2);
+	//new_diff = new_diff | (((ori&0x2)>>1) ^ (ori&0x1));
 
 	//S-Box and Permutation (2013)
 	//new_diff = new_diff | ((ori & 0x8) >> 2);
-	//new_diff = new_diff | ((ori & 0x4) << 1);
+	//new_diff = new_diff | ((((ori&0x8)>>1) ^ (ori&0x4)) << 1);
 
 	//new_diff = new_diff | ((ori & 0x2) << 1);
-	//new_diff = new_diff | ((ori & 0x1));
+	//new_diff = new_diff | (((ori&0x2)>>1) ^ (ori&0x1));
 
 	//S-Box and Permutation (0213)
-	//new_diff = new_diff | ((ori & 0x8));
-	//new_diff = new_diff | ((ori & 0x4) >> 1);
+	//new_diff = new_diff | (ori & 0x8);
+	//new_diff = new_diff | ((((ori&0x8)>>1) ^ (ori&0x4)) >> 1);
 
 	//new_diff = new_diff | ((ori & 0x2) << 1);
-	//new_diff = new_diff | ((ori & 0x1));
+	//new_diff = new_diff | (((ori&0x2)>>1) ^ (ori&0x1));
 
 	//S-Box and Permutation (1203)
-	//new_diff = new_diff | ((ori & 0x8 >> 1));
-	//new_diff = new_diff | ((ori & 0x4) >> 1);
+	//new_diff = new_diff | ((ori & 0x8) >> 1);
+	//new_diff = new_diff | ((((ori&0x8)>>1) ^ (ori&0x4)) >> 1);
 
 	//new_diff = new_diff | ((ori & 0x2) << 2);
-	//new_diff = new_diff | ((ori & 0x1));
+	//new_diff = new_diff | (((ori&0x2)>>1) ^ (ori&0x1));
 
 	//S-Box and Permutation (2103)
-	//new_diff = new_diff | ((ori & 0x8 >> 2));
-	//new_diff = new_diff | ((ori & 0x4));
+	//new_diff = new_diff | ((ori & 0x8) >> 2);
+	//new_diff = new_diff | ((((ori&0x8)>>1) ^ (ori&0x4)));
 
 	//new_diff = new_diff | ((ori & 0x2) << 2);
-	//new_diff = new_diff | ((ori & 0x1));
+	//new_diff = new_diff | (((ori&0x2)>>1) ^ (ori&0x1));
 
 	//S-Box and Permutation (2130)
-	//new_diff = new_diff | ((ori & 0x8 >> 2));
-	//new_diff = new_diff | ((ori & 0x4));
+	//new_diff = new_diff | ((ori & 0x8) >> 2);
+	//new_diff = new_diff | ((((ori&0x8)>>1) ^ (ori&0x4)));
 
-	//new_diff = new_diff | ((ori & 0x2 >> 1));
-	//new_diff = new_diff | ((ori & 0x1 << 3));
-	
+	//new_diff = new_diff | ((ori & 0x2) >> 1);
+	//new_diff = new_diff | ((((ori&0x2)>>1) ^ (ori&0x1)) << 3);
+
 	//S-Box and Permutation (1230)
-	//new_diff = new_diff | ((ori & 0x8 >> 1));
-	//new_diff = new_diff | ((ori & 0x4 >> 1));
+	//new_diff = new_diff | ((ori & 0x8) >> 1);
+	//new_diff = new_diff | ((((ori&0x8)>>1) ^ (ori&0x4)) >> 1);
 
-	//new_diff = new_diff | ((ori & 0x2 >> 1));
-	//new_diff = new_diff | ((ori & 0x1 << 3));
+	//new_diff = new_diff | ((ori & 0x2) >> 1);
+	//new_diff = new_diff | ((((ori&0x2)>>1) ^ (ori&0x1)) << 3);
 
 	//S-Box and Permutation (3210)
-	//new_diff = new_diff | ((ori & 0x8 >> 3));
-	//new_diff = new_diff | ((ori & 0x4 >> 1));
+	//new_diff = new_diff | ((ori & 0x8) >> 3);
+	//new_diff = new_diff | ((((ori&0x8)>>1) ^ (ori&0x4)) >> 1);
 
-	//new_diff = new_diff | ((ori & 0x2 << 1));
-	//new_diff = new_diff | ((ori & 0x1 << 3));
+	//new_diff = new_diff | ((ori & 0x2) << 1);
+	//new_diff = new_diff | ((((ori&0x2)>>1) ^ (ori&0x1)) << 3);
 
 	//S-Box and Permutation (2310)
-	//new_diff = new_diff | ((ori & 0x8 >> 2));
-	//new_diff = new_diff | ((ori & 0x4 >> 2));
+	//new_diff = new_diff | ((ori & 0x8) >> 2);
+	//new_diff = new_diff | ((((ori&0x8)>>1) ^ (ori&0x4)) >> 2);
 
-	//new_diff = new_diff | ((ori & 0x2 << 1));
-	//new_diff = new_diff | ((ori & 0x1 << 3));
+	//new_diff = new_diff | ((ori & 0x2) << 1);
+	//new_diff = new_diff | ((((ori&0x2)>>1) ^ (ori&0x1)) << 3);
 
 	//S-Box and Permutation (1320)
-	//new_diff = new_diff | ((ori & 0x8 >> 1));
-	//new_diff = new_diff | ((ori & 0x4 >> 2));
+	//new_diff = new_diff | ((ori & 0x8) >> 1);
+	//new_diff = new_diff | ((((ori&0x8)>>1) ^ (ori&0x4)) >> 2);
 
-	//new_diff = new_diff | ((ori & 0x2));
-	//new_diff = new_diff | ((ori & 0x1 << 3));
+	//new_diff = new_diff | (ori & 0x2);
+	//new_diff = new_diff | ((((ori&0x2)>>1) ^ (ori&0x1)) << 3);
 
 	//S-Box and Permutation (3021)
-	//new_diff = new_diff | ((ori & 0x8 >> 3));
-	//new_diff = new_diff | ((ori & 0x4 << 1));
+	//new_diff = new_diff | ((ori & 0x8) >> 3);
+	//new_diff = new_diff | ((((ori&0x8)>>1) ^ (ori&0x4)) << 1);
 
-	//new_diff = new_diff | ((ori & 0x2));
-	//new_diff = new_diff | ((ori & 0x1 << 2));
+	//new_diff = new_diff | (ori & 0x2);
+	//new_diff = new_diff | ((((ori&0x2)>>1) ^ (ori&0x1)) << 2);
 
 	//S-Box and Permutation (0321)
-	//new_diff = new_diff | ((ori & 0x8));
-	//new_diff = new_diff | ((ori & 0x4 >> 2));
+	//new_diff = new_diff | (ori & 0x8);
+	//new_diff = new_diff | ((((ori&0x8)>>1) ^ (ori&0x4)) >> 2);
 
-	//new_diff = new_diff | ((ori & 0x2));
-	//new_diff = new_diff | ((ori & 0x1 << 2));
+	//new_diff = new_diff | (ori & 0x2);
+	//new_diff = new_diff | ((((ori&0x2)>>1) ^ (ori&0x1)) << 2);
 
 	//S-Box and Permutation (3201)
-	//new_diff = new_diff | ((ori & 0x8 >> 3));
-	//new_diff = new_diff | ((ori & 0x4 >> 1));
+	//new_diff = new_diff | ((ori & 0x8) >> 3);
+	//new_diff = new_diff | ((((ori&0x8)>>1) ^ (ori&0x4)) >> 1);
 
-	//new_diff = new_diff | ((ori & 0x2 << 2));
-	//new_diff = new_diff | ((ori & 0x1 << 2));
+	//new_diff = new_diff | ((ori & 0x2) << 2);
+	//new_diff = new_diff | ((((ori&0x2)>>1) ^ (ori&0x1)) << 2);
 
 	//S-Box and Permutation (0231)
-	//new_diff = new_diff | ((ori & 0x8));
-	//new_diff = new_diff | ((ori & 0x4 >> 1));
+	//new_diff = new_diff | (ori & 0x8);
+	//new_diff = new_diff | ((((ori&0x8)>>1) ^ (ori&0x4)) >> 1);
 
-	//new_diff = new_diff | ((ori & 0x2 >> 1));
-	//new_diff = new_diff | ((ori & 0x1 << 2));
+	//new_diff = new_diff | ((ori & 0x2) >> 1);
+	//new_diff = new_diff | ((((ori&0x2)>>1) ^ (ori&0x1)) << 2);
 
 	//S-Box and Permutation (2031)
-	//new_diff = new_diff | ((ori & 0x8 >> 2));
-	//new_diff = new_diff | ((ori & 0x4 << 1));
+	//new_diff = new_diff | ((ori & 0x8) >> 2);
+	//new_diff = new_diff | ((((ori&0x8)>>1) ^ (ori&0x4)) << 1);
 
-	//new_diff = new_diff | ((ori & 0x2 >> 1));
-	//new_diff = new_diff | ((ori & 0x1 << 2));
+	//new_diff = new_diff | ((ori & 0x2) >> 1);
+	//new_diff = new_diff | ((((ori&0x2)>>1) ^ (ori&0x1)) << 2);
 
 	//S-Box and Permutation (1032)
-	//new_diff = new_diff | ((ori & 0x8 >> 1));
-	//new_diff = new_diff | ((ori & 0x4 << 1));
+	//new_diff = new_diff | ((ori & 0x8) >> 1);
+	//new_diff = new_diff | ((((ori&0x8)>>1) ^ (ori&0x4)) << 1);
 
-	//new_diff = new_diff | ((ori & 0x2 >> 1));
-	//new_diff = new_diff | ((ori & 0x1 << 1));
+	//new_diff = new_diff | ((ori & 0x2) >> 1);
+	//new_diff = new_diff | ((((ori&0x2)>>1) ^ (ori&0x1)) << 1);
 
 	//S-Box and Permutation (0132)
-	//new_diff = new_diff | ((ori & 0x8));
-	//new_diff = new_diff | ((ori & 0x4));
+	//new_diff = new_diff | (ori & 0x8);
+	//new_diff = new_diff | (((ori&0x8)>>1) ^ (ori&0x4));
 
-	//new_diff = new_diff | ((ori & 0x2 >> 1));
-	//new_diff = new_diff | ((ori & 0x1 << 1));
+	//new_diff = new_diff | ((ori & 0x2) >> 1);
+	//new_diff = new_diff | ((((ori&0x2)>>1) ^ (ori&0x1)) << 1);
 
 	//S-Box and Permutation (3102)
-	//new_diff = new_diff | ((ori & 0x8 >> 3));
-	//new_diff = new_diff | ((ori & 0x4));
+	//new_diff = new_diff | ((ori & 0x8) >> 3);
+	//new_diff = new_diff | (((ori&0x8)>>1) ^ (ori&0x4));
 
-	//new_diff = new_diff | ((ori & 0x2 << 2));
-	//new_diff = new_diff | ((ori & 0x1 << 1));
+	//new_diff = new_diff | ((ori & 0x2) << 2);
+	//new_diff = new_diff | ((((ori&0x2)>>1) ^ (ori&0x1)) << 1);
 
 	//S-Box and Permutation (1302)
-	//new_diff = new_diff | ((ori & 0x8 >> 1));
-	//new_diff = new_diff | ((ori & 0x4 >> 2));
+	//new_diff = new_diff | ((ori & 0x8) >> 1);
+	//new_diff = new_diff | ((((ori&0x8)>>1) ^ (ori&0x4)) >> 2);
 
-	//new_diff = new_diff | ((ori & 0x2 << 2));
-	//new_diff = new_diff | ((ori & 0x1 << 1));
+	//new_diff = new_diff | ((ori & 0x2) << 2);
+	//new_diff = new_diff | ((((ori&0x2)>>1) ^ (ori&0x1)) << 1);
 
 	//S-Box and Permutation (0312)
-	new_diff = new_diff | ((ori & 0x8));
-	new_diff = new_diff | ((ori & 0x4 >> 2));
+	new_diff = new_diff | (ori & 0x8);
+	new_diff = new_diff | ((((ori & 0x8) >> 1) ^ (ori & 0x4)) >> 2);
 
-	new_diff = new_diff | ((ori & 0x2 << 1));
-	new_diff = new_diff | ((ori & 0x1 << 1));
+	new_diff = new_diff | ((ori & 0x2) << 1);
+	new_diff = new_diff | ((((ori & 0x2) >> 1) ^ (ori & 0x1)) << 1);
 
     //Generate Mask
 	if (((ori&0x8)!=0) && ((ori&0x4)!=0)){
@@ -266,7 +267,7 @@ void roundProcess(const int n, const int nrounds, int as, int B[], int* Bn,
 
 					//cout << hex << internalTruncState[0][1] << ", " << hex << internalTruncState[NROUNDS][1] << ", " << AS << ", 11, " << "['0011', '0000', '0001', '0010']" << endl;
 					//file << std::bitset<4>(internalTruncState[0][1]) << ", " << std::bitset<4>(internalTruncState[NROUNDS][1]) << ", " << AS << ", 19, " << std::bitset<64>(0x3012) << endl;
-					file << std::bitset<4>(internalTruncState[0][1]) << ", " << std::bitset<4>(internalTruncState[NROUNDS][1]) << ", " << AS << ", 12, " << "1, 3, 0, 2" << endl;
+					file << std::bitset<4>(internalTruncState[0][1]) << ", " << std::bitset<4>(internalTruncState[NROUNDS][1]) << ", " << AS << ", " << nrounds << ", " << "1, 3, 0, 2" << endl;
 				}
 			//}
         }
