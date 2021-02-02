@@ -75,7 +75,9 @@ for train_index, test_index in skf.split(x_data, y_labels):
     y_train, y_test = y_labels.values[train_index], y_labels.values[test_index]
     #print(x_train, x_test)
     #print(y_train, y_test)
+    
 
+#*****************************************************************************************
 neigh = KNeighborsClassifier(n_neighbors=4, algorithm="ball_tree", leaf_size=40, n_jobs=-1)
 #Cross Validation, enable accordingly
 #print('Cross Val Score: ', cross_val_score(neigh, x_data, y_labels, cv=5))
@@ -103,6 +105,7 @@ confusion = confusion_matrix(testing_labels, predictions)
 print('Confusion matrix:')
 print(confusion)
 
+#*****************************************************************************************
 decisiontree = DecisionTreeClassifier( max_leaf_nodes=None, min_samples_split=2, splitter="random")
 print('Decision Tree')
 #Cross validation, enable accordingly
@@ -133,6 +136,7 @@ confusion = confusion_matrix(testing_labels, predictions)
 print('Confusion matrix:')
 print(confusion)
 
+#*****************************************************************************************
 mlp = MLPClassifier(random_state=0, batch_size=5000, max_iter=1000, n_iter_no_change=1000)
 #Cross Validation, enable accordingly
 #print('Cross Val Score: ', cross_val_score(mlp, x_data, y_labels, cv=5))
@@ -163,6 +167,7 @@ confusion = confusion_matrix(testing_labels, predictions)
 print('Confusion matrix:')
 print(confusion)
 
+#*****************************************************************************************
 model = LogisticRegression(n_jobs=-1, max_iter=500000)
 model.fit(x_data, y_labels)
 predictions = model.predict(testing_data)
@@ -188,6 +193,7 @@ confusion = confusion_matrix(testing_labels, predictions)
 print('Confusion matrix:')
 print(confusion)
 
+#*****************************************************************************************
 model = Perceptron(n_jobs=-1, n_iter_no_change=750, max_iter=750)
 model.fit(x_data, y_labels)
 predictions = model.predict(testing_data)
