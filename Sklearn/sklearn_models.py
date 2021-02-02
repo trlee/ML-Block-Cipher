@@ -84,17 +84,22 @@ neigh.fit(x_data, y_labels)
 predictions = neigh.predict(testing_data)
 #predictions = neigh.predict(x_test)
 print('KNN')
+
+#Uncomment the following for baseline experiments
 print('Predictions:', predictions)
 print(classification_report(testing_labels, predictions))
 print('Accuracy:', accuracy_score(testing_labels, predictions))
 print('Recall:', recall_score(testing_labels, predictions, average="weighted"))
 print('Precision:', precision_score(testing_labels, predictions, average="weighted"))
 confusion = confusion_matrix(testing_labels, predictions)
+
+#Uncomment the following for generalization experiments
 #print(classification_report(y_test, predictions))
 #print('Accuracy:', accuracy_score(y_test, predictions))
 #print('Recall:', recall_score(y_test, predictions, average="weighted"))
 #print('Precision:', precision_score(y_test, predictions, average="weighted"))
 #confusion = confusion_matrix(y_test, predictions)
+
 print('Confusion matrix:')
 print(confusion)
 
@@ -110,16 +115,21 @@ score = decisiontree.score(testing_data, testing_labels, sample_weight=None)
 #score = decisiontree.score(x_test, y_test, sample_weight=None)
 print('Score: ', score)
 print('Predictions: ', predictions)
+
+#Uncomment the following for baseline experiments
 print(classification_report(testing_labels, predictions))
 print('Accuracy:', accuracy_score(testing_labels, predictions))
 print('Recall:', recall_score(testing_labels, predictions, average="weighted"))
 print('Precision:', precision_score(testing_labels, predictions, average="weighted"))
 confusion = confusion_matrix(testing_labels, predictions)
+
+#Uncomment the following for generalization experiments
 #print(classification_report(y_test, predictions))
 #print('Accuracy:', accuracy_score(y_test, predictions))
 #print('Recall:', recall_score(y_test, predictions, average="weighted"))
 #print('Precision:', precision_score(y_test, predictions, average="weighted"))
 #confusion = confusion_matrix(y_test, predictions)
+
 print('Confusion matrix:')
 print(confusion)
 
@@ -135,16 +145,21 @@ score = mlp.score(testing_data, testing_labels, sample_weight=None)
 #score = mlp.score(x_test, y_test, sample_weight=None)
 print('Score: ', score)
 print('Predictions: ', predictions)
+
+#Uncomment the following for baseline experiments
 print(classification_report(testing_labels, predictions))
 print('Accuracy:', accuracy_score(testing_labels, predictions))
 print('Recall:', recall_score(testing_labels, predictions, average="weighted"))
 print('Precision:', precision_score(testing_labels, predictions, average="weighted"))
 confusion = confusion_matrix(testing_labels, predictions)
+
+#Uncomment the following for generalization experiments
 #print(classification_report(y_test, predictions))
 #print('Accuracy:', accuracy_score(y_test, predictions))
 #print('Recall:', recall_score(y_test, predictions, average="weighted"))
 #print('Precision:', precision_score(y_test, predictions, average="weighted"))
 #confusion = confusion_matrix(y_test, predictions)
+
 print('Confusion matrix:')
 print(confusion)
 
@@ -155,16 +170,21 @@ predictions = model.predict(testing_data)
 #predictions = model.predict(x_test)
 print('LogisticRegression')
 print('Predictions:' , predictions)
+
+#Uncomment the following for baseline experiments
 print(classification_report(testing_labels, predictions))
 print('Accuracy:', accuracy_score(testing_labels, predictions))
 print('Recall:', recall_score(testing_labels, predictions, average="macro"))
 print('Precision:', precision_score(testing_labels, predictions, average="macro"))
 confusion = confusion_matrix(testing_labels, predictions)
+
+#Uncomment the following for generalization experiments
 #print(classification_report(y_test, predictions))
 #print('Accuracy: ', accuracy_score(y_test, predictions))
 #print('Recall: ', recall_score(y_test, predictions, average="macro"))
 #print('Prediction: ', precision_score(y_test, predictions, average="macro"))
 #confusion = confusion_matrix(y_test, predictions)
+
 print('Confusion matrix:')
 print(confusion)
 
@@ -175,15 +195,20 @@ predictions = model.predict(testing_data)
 #predictions = model.predict(x_test)
 print('Perceptron')
 print('Predictions:' , predictions)
+
+#Uncomment the following for baseline experiments
 print(classification_report(testing_labels, predictions))
 print('Accuracy:', accuracy_score(testing_labels, predictions))
 print('Recall:', recall_score(testing_labels, predictions, average="macro"))
 print('Precision:', precision_score(testing_labels, predictions, average="macro"))
 confusion = confusion_matrix(testing_labels, predictions)
+
+#Uncomment the following for generalization experiments
 #print(classification_report(y_test, predictions))
 #print('Accuracy: ', accuracy_score(y_test, predictions))
 #print('Recall: ', recall_score(y_test, predictions, average="macro"))
 #print('Prediction: ', precision_score(y_test, predictions, average="macro"))
 #confusion = confusion_matrix(y_test, predictions)
+
 print('Confusion matrix:')
 print(confusion)
