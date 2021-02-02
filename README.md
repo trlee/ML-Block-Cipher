@@ -6,5 +6,5 @@ A Machine Learning Approach to Predicting Block Cipher Security (https://www.msc
 
 If you use/modify the code in this repository for your own research and publish it, please cite the paper:
 
-TR Lee, JS Teh, JLS Yan, N Jamil, W-Z Yeoh (2020) A Machine Learning Approach to Predicting Block Cipher Security. In: Proceedings of the 7th International Cryptology and Information Security Conference.CRYPTOLOGY 2020.
+TR Lee, JS Teh, JLS Yan, N Jamil, W-Z Yeoh (2020) A Machine Learning Approach to Predicting Block Cipher Security. In: Proceedings of the 7th International Cryptology and Information Security Conference. CRYPTOLOGY 2020.
 
